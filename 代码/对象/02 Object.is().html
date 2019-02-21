@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * 新增的Object.is的方法 用于判断两个值是否相等
+         */
+
+        console.log(NaN == NaN);//false
+        console.log(isNaN(NaN)); //true
+
+        var b = Object.is(NaN,NaN);
+        console.log(b);
+
+        console.log(+0 == -0);//true
+        console.log(Object.is(+0,-0)); //false
+    </script>
+</head>
+<body>
+
+</body>
+</html>

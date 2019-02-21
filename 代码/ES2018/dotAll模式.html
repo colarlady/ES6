@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>命名捕获</title>
+    <script>
+        //正则中.匹配任何，但是一些特殊符号比如\n等匹配不了
+        //匹配模式 g全局匹配  i忽略大小写 m 多行模式
+        //ES2018提出dotAll模式 /s
+
+        let reg = /^\w+.\w+$/s;
+        let str = 'welcome\n51mmr';
+        
+        console.log(reg.test(str));
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 0
+        }
+
+        .left {
+            left: 0
+        }
+
+        .right {
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div id="dv1" class="box left">DIV1</div>
+<div id="dv2" class="box right">DIV2</div>
+
+<script>
+
+
+    class Drag {
+        constructor(id) {
+            this.oDIV = document.querySelector(id);
+            this.x = 0;
+            this.y = 0;
+            this.init();
+        }
+
+        init() {
+            this.oDIV.onmousedown = function (ev) {
+                this.x = ev.clientX - this.oDIV.offsetLeft;
+                this.y = ev.clientY - this.oDIV.offsetTop;
+                this.oDIV.style.cursor = 'move';
+
+                document.onmousemove = this.fnMove.bind(this);
+                document.onmouseup = this.fnUp.bind(this);
+            }.bind(this);
+        }
+
+        fnMove(ev) {
+            this.oDIV.style.left = ev.clientX - this.x + "px";
+            this.oDIV.style.top = ev.clientY - this.y + "px";
+        }
+
+        fnUp() {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+
+    class LimitDarg extends Drag {
+
+        //移动时限制范围
+        fnMove(ev) {
+            super.fnMove(ev);
+            if ( parseInt(this.oDIV.style.left) < 0) {
+                this.oDIV.style.left = "0px";
+            }
+            if ( parseInt(this.oDIV.style.top) < 0) {
+                this.oDIV.style.top = "0px";
+            }
+            if (parseInt(this.oDIV.style.left) > (document.documentElement.clientWidth - this.oDIV.offsetWidth)) {
+                this.oDIV.style.left = (document.documentElement.clientWidth - this.oDIV.offsetWidth) + "px";
+            }
+            if (parseInt(this.oDIV.style.top) > (document.documentElement.clientHeight - this.oDIV.offsetHeight)) {
+                this.oDIV.style.top = (document.documentElement.clientHeight - this.oDIV.offsetHeight) + "px";
+            }
+        }
+
+    }
+
+    //实现拖拽
+    new Drag("#dv1");
+    //实现有限制的拖拽
+      new LimitDarg("#dv2");
+</script>
+</body>
+</html>

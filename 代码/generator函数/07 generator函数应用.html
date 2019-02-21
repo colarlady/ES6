@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        //https://api.github.com/users/colarlady
+        //generator配合axios进行数据请求
+
+        function* gen() {
+            var val = yield "colarlady";
+            yield axios.get(`https://api.github.com/users/${val}`);
+        }
+
+        var g1 = gen();
+        var name = g1.next().value;
+       // console.log(g1.next(name).value);  //得到的是一个promise对象
+        g1.next(name).value.then(res => {
+            console.log(res.data);
+        })
+        //  console.log(name);
+
+        //异步：上一个操作没有执行完下一个操作也会执行
+        //同步：上一个操作没有执行完下一个操作不会执行
+
+        //异步解决方案
+        //1.回调函数
+        //2.事件监听
+        //3.发布/订阅
+        //4.promise对象
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="module">
+        //ES6中模块化需要放在服务器环境中
+
+        //type = module  定义模块
+
+        //引入模块
+        import './modules/1.js';
+        import 'https://code.jquery.com/jquery-3.3.1.min.js';
+
+        /**
+         * import的使用方法
+         * import 可以是相对路径 也可以是绝对路径
+         * import模块导入一次  无论你引入多少次
+         * import './modules/1.js';如果这样使用只是相当于普通的引入js文件
+         *
+         */
+        setTimeout(()=>{
+            $(function () {
+               $("body").css({
+                   background:"red"
+               });
+            });
+        },2000);
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

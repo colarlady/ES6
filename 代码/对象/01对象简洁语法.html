@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * 1.ES6中对对象的定义有了更加简洁的语法
+         *
+         */
+        let name = "jesscia";
+        let age = 18;
+
+        //ES5
+        //        let json = {
+        //            name:name,
+        //            age:age
+        //        };
+
+        //ES6
+        let json = {
+            name,
+            age,
+//            showA:function () {
+//                return this.name
+//            }
+            showA(){  //一定不要使用箭头函数
+                return this.name;
+            }
+        };
+        console.log(json.showA());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

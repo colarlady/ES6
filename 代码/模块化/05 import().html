@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="module">
+        //不支持
+//        let a = 5;
+//        if(a==5){
+//            import {a,b} from './modules/1.js';
+//        }else{
+//            import {a,b} from './modules/2.js';
+//        }
+
+        //动态引入使用import()
+
+
+        import('./modules/1.js').then(res=>{
+            console.log(res);
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

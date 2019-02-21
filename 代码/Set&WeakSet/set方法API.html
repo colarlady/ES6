@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //set提供的方法API
+
+        //1.add() 添加一项
+        let set = new Set();
+        set.add('a');
+        set.add('b');
+        console.log(set);
+        console.log('----------');
+
+        //2.delete() 删除一项
+        set.delete('b')
+        console.log(set);
+        console.log('----------');
+
+        //3.has()判断set中是否有某一项
+        console.log(set.has('b'));
+        console.log(set.has('a'));
+        console.log('----------');
+
+        //4.size获取数组项的个数
+        console.log(set.size);
+        console.log('----------');
+
+        //5.清空数组
+        set.clear();
+        console.log(set);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

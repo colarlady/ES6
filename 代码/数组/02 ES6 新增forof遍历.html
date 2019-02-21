@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //1. for of 循环
+        let arr = ["apple","banana","orange","tomato"];
+
+        for(let val of arr){
+            console.log(val);
+        }
+        //循环输出索引值
+        for(let index of arr.keys()){
+            console.log(index);
+        }
+
+        for(let item of arr.entries()){
+            console.log(item);
+        }
+
+        for(let [index, val] of arr.entries()){
+            console.log(index,val);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

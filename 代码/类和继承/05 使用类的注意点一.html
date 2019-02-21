@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //注意点一:ES6中没有预解析的概念所以必须先定义类再使用
+        let per  = new Person();
+        console.log(per);
+
+        class Person{
+            constructor(){
+                this.name = "a";
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

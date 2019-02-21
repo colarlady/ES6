@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+    //set数据结构变成数组
+    //数组有很多方法可以来使用
+
+    // 数组map方法
+    let set = new Set([1,2,3]);
+    set = new Set([...set].map(value=>value*2));
+    console.log(set); 
+
+    //数组filter方法
+    let set2 = new Set([1,2,3,4,5,6]);
+    set2 = new Set([...set].filter(val=>val%2===0));
+    console.log(set2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

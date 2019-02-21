@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //注意点二:this一般不太过分不会报错
+
+
+//        class Person{
+//            constructor(){
+//                this.name = "a";
+//            }
+//            showName(){
+//                console.log(this);
+//                return this.name;
+//            }
+//        }
+//
+//        let per  = new Person();
+//
+//        per.showName();  //实例对象本身
+
+
+        class Person{
+            constructor(){
+                this.name = "a";
+                this.showName = this.showName.bind(this);  //矫正this
+            }
+            showName(){
+                console.log(this);
+                return this.name;
+            }
+        }
+
+        let per  = new Person();
+        let {showName} = per;
+        showName();  //报错 this为undefined,,,name无法访问
+
+
+
+      //补充ES5中的this矫正的知识点
+      //  fn.bind();
+      //  fn.apply(this指向谁,args1,args2,args3...);
+      //  fn.call(this指向谁,[args1,args2,args3...]);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        const Person = class {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            showName() {
+                return `我的名字叫:${this.name}`;
+            }
+
+            showAge() {
+                return `我的年龄是:${this.age}`;
+            }
+        }
+
+        let per = new Person("吴亚茹", 19);
+        console.log(per.showName(), per.showAge());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

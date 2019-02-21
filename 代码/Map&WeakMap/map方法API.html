@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+
+        let map = new Map();
+        let json = {
+            a:1,
+            b:2,
+            c:3
+        };
+        map.set('a','aaa');
+        map.set(json,'aaa');
+        map.set('aaa',json);
+
+        console.log(map);
+
+        //获取某一项
+        console.log(map.get(json));
+        //删除某一项
+        map.delete('aaa');
+       
+        //判断有没有某一项
+        console.log(map.has('aaa'));
+
+         //清空
+         map.clear();
+         console.log(map);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

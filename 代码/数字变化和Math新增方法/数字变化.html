@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //数值变化
+        //二进制数字:let a = 0b101011
+        //八进制数字: let b = 0o7371;
+        //十六机制: let c = #ccc;
+
+
+        //Number变化
+
+        //1.判断是不是NaN
+        let a = 12;
+        console.log(Number.isNaN(a));
+        console.log(Number.isNaN(NaN));
+
+        //2.判断是不是数字
+        let str = 'welcome';
+        console.log(Number.isFinite(a));
+        console.log(Number.isFinite(str));
+
+
+        //3.判断是不是整数
+        let b = 12.5
+        console.log(Number.isInteger(a));
+        console.log(Number.isInteger(b));
+        //4.转Int
+        // Number.parseInt()
+
+        //5.转float
+        //Number.parseFloat()
+
+
+
+        //安全整数 -(2^53-1) -----(2^53-1)
+        //6.判断是否是安全整数
+        console.log("-----------------");
+        let c = 2**53-1;
+        console.log(Number.isSafeInteger(c));
+
+        //最大安全整数:Number.MAX_SAFE_INTEGER
+
+        //最小安全整数:Number.MIN_SAFE_INTEGER
+    </script>
+</head>
+<body>
+
+</body>
+</html>

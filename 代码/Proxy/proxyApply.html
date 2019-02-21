@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            //apply是用来拦截函数的
+            function fn(){
+                return '我是函数';
+            }
+
+            let newFn = new Proxy(fn,{
+                apply(){
+                    return '函数么?'
+                }
+            })
+
+            newFn();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        //实现，访问一个对象上的属性
+        //默认属性不存在的时候是undefined，提示警告信息
+        //存在的时候返回
+
+        let obj = {
+            name:'strive'
+        };
+
+
+        let newObj = new Proxy(obj,{
+            get(target,property){
+                if(property in target){
+                    return target[property];
+                }else{
+                    console.warn(`${property}属性不在此对象上`);
+                    return '^_^';
+                }
+            }
+        })
+
+        console.log(newObj.name);
+        console.log(newObj.age);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

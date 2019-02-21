@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+    //set里面存储对象
+    //WeakSet基本上不要用
+        //WeakSet没有size没有clear()
+    let set = new Set();
+    let json = {
+        a:1,
+        b:2,
+        c:3
+    };
+    set.add(json);
+    let json2 = {
+        a:2,
+        b:3,
+        c:1
+    }
+    set.add(json2);
+    console.log(set); 
+    </script>
+</head>
+<body>
+
+</body>
+</html>

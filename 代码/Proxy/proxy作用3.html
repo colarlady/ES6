@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        const DOM = new Proxy({},{
+            get(target,property){
+                return function(attr={},...children){
+
+                    const el = document.createElement(property);
+
+                    //添加属性
+                    for(let key of Object.keys(attr)){
+                        el.setAttribute(key,attr[key]);
+                    }
+                    //添加子元素
+                    for(let child of children){
+                        if(typeof child === 'string'){
+                            child = document.createTextNode(child);
+                        }
+                        el.appendChild(child);
+                    }
+                    return el;
+                }
+            }
+        })
+
+
+
+        let oDiv = DOM.div({id:'div1',class:'a'},'我是div','呵呵呵');
+        console.log(oDiv);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

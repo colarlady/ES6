@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //Array.from 是将类数组，arguments对象转为数组
+
+        //类数组:只要有length基本上可以认为是类数组
+        window.onload = function () {
+            let liObjs = document.querySelectorAll("ul li");
+            let arr = Array.from(liObjs);
+            console.log(arr);
+
+        };
+
+        function show() {
+            console.log(Array.from(arguments));
+        }
+        show(1,2,3,4,5);
+
+        let json = {
+            0:"apple",
+            1:"banana",
+            2:"orange",
+            length:2
+        };
+        let arr = Array.from(json);
+        console.log(arr);
+
+
+
+    </script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+</html>

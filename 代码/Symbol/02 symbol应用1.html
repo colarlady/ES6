@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+       let syml = Symbol("aa");
+       let json = {
+         a:"apple",
+         b:"banaba",
+         [syml]:"ssdsd"
+       };
+       console.log(json[syml]); //ssdsd
+
+        
+        for(let key in json){
+            console.log(json[key]);
+        }
+
+        //如果symbol作为key循环遍历出不来
+        for(let item in json){
+            console.log(item);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

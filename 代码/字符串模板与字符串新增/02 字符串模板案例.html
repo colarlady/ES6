@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1">
+        <!--<li>-->
+            <!--<span>新闻标题</span>-->
+            <!--<span>阅读人数:10</span>-->
+            <!--<a href="javascript:;">详情</a>-->
+        <!--</li>-->
+    </ul>
+    <script>
+
+        //获取ul1
+        let ulObjs = document.querySelector("#ul1");
+
+        //数据格式
+        let data=[
+            {title:"习近平：党中央高度重视中小企业发展",read:100},
+            {title:"习近平向第八届北京香山论坛致贺信",read:1000},
+            {title:"进博会赶制5万份应急备餐盒  上海虹桥机场准备好了",read:10},
+            {title:"《你的马克思已上线》择业篇",read:20},
+            {title:"'将改革开放进行到底系列'论坛第一场论坛",read:3}
+        ];
+
+        for(let i=0;i<data.length;i++){
+
+           let li = document.createElement("li");
+
+           li.innerHTML = `<span>${data[i].title}</span>
+            <span>阅读人数:${data[i].read}</span>
+            <a href="javascript:;">详情</a>`;
+
+           console.log(li);
+           ulObjs.appendChild(li);
+
+        }
+
+    </script>
+
+</body>
+</html>

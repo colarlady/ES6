@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>命名捕获</title>
+    <script>
+
+        //之前的捕获方式
+        /*
+        let  str = '2018-03-20';
+        let reg = /(\d{4})-(\d{2})-(\d{2})/;
+        let dateArr = str.match(reg);
+
+        let year = dateArr[1];
+        let month = dateArr[2];
+        let day = dateArr[3];
+        console.log(year,month,day);
+        */
+
+
+        //1.ES2018提供了一个命名捕获
+        //语法:?<名字>
+       
+        let  str = '2018-03-20';
+        let reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+        let {year,month,day} = str.match(reg).groups;
+        console.log(year,month,day);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

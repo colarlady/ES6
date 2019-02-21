@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //ES5如何实现继承
+         
+//        function Person(name) {
+//            this.name = name;
+//        }
+//        Person.prototype.eat = function () {
+//            return "人再吃饭";
+//        }
+//
+//        function Student(name,skill) {
+//            Person.call(this,name);  //继承属性
+//            this.skill = skill;
+//        }
+//
+//        //继承方法
+//        Student.prototype = new Person();  //继承方法
+//
+//        var student = new Student("wuyaru","学习");
+//        console.log(student.name,student.skill);
+//        console.log(student.eat());
+
+
+        //ES6实现继承
+        class Person{
+            constructor(name){
+                this.name = name;
+            }
+            showName(){
+                return `我的名字是${this.name}`;
+            }
+        }
+
+        class Student extends Person{
+
+        }
+
+        var student = new Student("wuyaru");
+        console.log(student.showName());
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        /**
+         * Promise.resolve("aa")
+         * Promise.reject("aa")
+         */
+//        let promise = Promise.resolve("aa");
+//        promise.then(res=>{
+//            console.log(res);
+//        });
+
+//        let promise = new Promise(function (resolve,reject) {
+//            resolve("aa");
+//        });
+//        promise.then(res=>{
+//            console.log(res);
+//        });
+
+        /**
+         * Promise.all([promise1,promise2,promise3]) // 将promise对象打包
+         * 必须确保所有的promise都是成功的状态才返回
+         *  Promise.race([promise1,promise2,promise3]) // 将promise对象打包
+         * 只要有成功的一个就返回
+         */
+//        let promise = Promise.resolve("aa");
+//        let promise2 = Promise.resolve("bb");
+//        let promise3 = Promise.resolve("cc");
+//        let pro = Promise.all([promise,promise2,promise3]);
+//        pro.then(res=>{
+//             let [result1,result2,result3]=res;
+//             console.log(result1,result2,result3);
+//         });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

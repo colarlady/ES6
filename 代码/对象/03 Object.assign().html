@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * Object.assign(目标对象,source1,source2,source3,...)用于合并对象
+         *  返回一个新的合并后的对象
+         */
+
+        let json = {a:1};
+        let json2 = {a:2,b:1};
+        let json3 = {c:3};
+        let b=Object.assign({},json,json2,json3);
+        console.log(b);
+
+        //主要用途
+        //1.赋值一个对象
+        let arr =["apple","banana","orange"];
+        let arr2 = Object.assign([],arr);
+        arr2.push("tomato");
+        console.log(arr);
+        console.log(arr2);
+        //2.合并参数（写框架时）
+
+        function show(options) {
+            let default = {
+                type:'get',
+                header:'',
+                data:{}
+            };
+            let argu = Object.assign({},options,default);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

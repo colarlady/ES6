@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //class中的存值函数setter和取值函数getter
+
+        class Person {
+            constructor(){
+
+            }
+            set aa(val){
+                console.log(`设置aa属性值为:${val}`);
+            }
+            get aa(){
+                return `haha`;
+            }
+        }
+
+        var per = new Person();
+        per.aa = 123;
+        console.log(per.aa);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

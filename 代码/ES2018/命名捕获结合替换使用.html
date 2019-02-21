@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>命名捕获</title>
+    <script>
+        //replace替换
+        // 2019-02-21转成21/02/2019
+        //正常使用 $1,$2
+        let str = '2019-02-21';
+
+        let reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+        console.log(str.replace(reg,'$<day>/$<month>/$<year>'));
+
+
+        //替换结合函数
+        str = str.replace(reg,(...args)=>{
+            //args数组最后一项是一个匹配到的json
+            let {year,month,day} = args[args.length-1];
+            return `$<day>/$<month>/$<year>`;
+        });
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

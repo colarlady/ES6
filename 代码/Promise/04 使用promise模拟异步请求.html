@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * 模拟用户登陆场成功后获取用户信息
+         */
+        let status = 1;
+        let userLogin = (resolve,reject)=>{
+            setTimeout(()=>{
+                if(status==1){
+                    resolve({data:"登录成功",msg:"success",token:"adadsdewffv"});
+                }else{
+                    reject("失败了");
+                }
+            },2000);
+        };
+        let getUserLogin = (resolve,reject)=>{
+            setTimeout(()=>{
+                if(status==1){
+                    resolve({data:"获取用户信息成功",msg:"success",token:"adaewrdewffv"});
+                }else{
+                    reject("失败了");
+                }
+            },1000);
+        };
+
+        new Promise(userLogin).then(res=>{
+            console.log("用户登录成功");
+            return new Promise(getUserLogin);
+        }).then(res=>{
+            console.log("获取用户信息成功");
+            console.log(res);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**
+         * Object.keys()
+         * Object.values()
+         * Object.entries()
+         */
+
+        let json ={
+            a:1,
+            b:2,
+            c:3
+        };
+
+        for(let key of Object.keys(json)){
+            console.log(key);
+        }
+        for(let val of Object.values(json)){
+            console.log(val);
+        }
+        for(let entry of Object.entries(json)){
+            console.log(entry);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

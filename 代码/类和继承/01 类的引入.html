@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //ES5
+//        function Person(name) {
+//            this.name = name;
+//        }
+//
+////        Perosn.prototype.eat = function () {
+////            console.log("人在吃");
+////        }
+//
+//        Object.assign(Person.prototype,{
+//           showName(){
+//               console.log(`我的名字是${this.name}`);
+//           }
+//        });
+//        new Person("wuyaru").showName();
+
+
+
+        //ES6  类的定义
+        class Person{
+            constructor(name,age){  //构造函数，当使用new时就默认调用
+                console.log(`构造函数执行了,${name},${age}`);
+            }
+        }
+
+        console.log(typeof Person); //function    所以说本质上也就是ES中的function
+        new Person("wuyaru",19);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
