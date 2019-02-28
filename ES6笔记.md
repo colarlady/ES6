@@ -1462,6 +1462,9 @@
               for(let item in json){
                   console.log(item);
               }
+       ```
+      ```
+
       ```
 
 + generator
@@ -1474,6 +1477,9 @@
        function * show() {
                //   配合yield(产出) 使用
               }
+       ```
+      ```
+
       ```
 
   + 使用
@@ -1509,6 +1515,7 @@
               for(var item of gl){
                   console.log(item);
               }
+      ```
 
 
       //generator配合解构使用
@@ -1518,21 +1525,19 @@
                   yield "to";
                   return "jesscia";
               }
-
+    
               var [a, ...b] = gen();
               console.log(a, b);
-        
 
       //generator配合扩展运算符使用
-
+    
               function* gen() {
                   yield "welcome";
                   yield "to";
                   return "jesscia";
               }
-
+    
               console.log(...gen());
-
 
 
       //generator配合axios进行数据请求
@@ -1541,7 +1546,7 @@
                   var val = yield "colarlady";
                   yield axios.get(`https://api.github.com/users/${val}`);
               }
-
+    
               var g1 = gen();
               var name = g1.next().value;
              // console.log(g1.next(name).value);  //得到的是一个promise对象
@@ -1586,6 +1591,7 @@
           })
       })
   }
+  ```
 
 
   //1.promise方式
@@ -1667,7 +1673,7 @@
         // promise自己来catch
       
     //建议await都要try{}catch()
-    ```
+  ```
 
 + async异步可以是字符串
 
@@ -1678,9 +1684,11 @@
             fn().then(res=>{
                 console.log(res);
             })
+       ```
     ```
 
   ​
+    ```
 
 ## Set和weakSet
 
